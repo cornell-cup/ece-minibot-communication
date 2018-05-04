@@ -1,0 +1,26 @@
+{
+  "name": "replacename",
+  "startupScript": "",
+  "keepStartupRunning": true,
+  "discoverable": true,
+  "acceptTcp": true,
+  "acceptXbox": true,
+  "wheelEnablerPin": 21,
+  "actuators": [
+    {
+       "name" : "leftMotor",
+        "pinPWM": 3,
+        "pinHighLow" :2
+
+    },
+    {
+      "name" :"rightMotor",
+        "pinPWM": 5,
+        "pinHighLow": 4
+
+    }
+  ],
+  "sensors": [
+
+  ]
+}
