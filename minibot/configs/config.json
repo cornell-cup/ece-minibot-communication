@@ -20,7 +20,10 @@
 
     }
   ],
-  "sensors": [
+  "colorsensors": [
+
+  ],
+  "analogsensors": [
 
   ]
 }

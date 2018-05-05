@@ -7,6 +7,7 @@ from minibot.botstate import BotState
 from minibot.hardware.arduino.gpio import DigitalInput, DigitalOutput, PWM, HBridgeOut
 from minibot.peripherals.colorsensor import ColorSensor
 from minibot.peripherals.hbridge import HBridge
+from minibot.peripherals.analogsensor import AnalogSensor
 import time
 
 class Bot():
@@ -48,10 +49,17 @@ class Bot():
         wheelEnabler = DigitalOutput(config["wheelEnablerPin"])
         wheelEnabler.set_high()
 
-        for sensor in config["sensors"]:
+        #Add color sensors
+        for sensor in config["colorsensors"]:
             name = sensor["name"]
             pin = sensor["pin"]
             self.sensors[name] = ColorSensor(self, name, pin)
+
+        #Add analog sensors
+        for sensor in config["analogsensors"]:
+            name = sensor["name"]
+            pin = sensor["pin"]
+            self.sensors[name] = AnalogSensor(self, name, pin)
 
     def get_state(self):
         """
