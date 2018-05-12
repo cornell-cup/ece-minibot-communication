@@ -17,13 +17,13 @@ class SonarSensor():
             pin_number_Echo (int): pin number on arduino of Echo pin
         """
         self.name = name
-        self.sonar = Sonar(pin_number_Echo, pin_number_Trig)
+        self.sonar = Sonar(pin_number_Trig, pin_number_Echo)
 
     def read(self):
         """
         Returns distance measured by sensor in cm
         """
-        return self.analoginput.read()
+        return self.sonar.read()
 
     def get_name(self):
         """
