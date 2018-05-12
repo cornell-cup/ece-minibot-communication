@@ -44,6 +44,10 @@ def motorDrive(portPWM,portDig,PWM,dig):
 def hbridgeDrive(portPWM1,portDig1,PWM1,dig1,portPWM2,portDig2,PWM2,dig2):
     ser.write(b'H'+bytes([portPWM1,portDig1,PWM1&255,dig1&255,portPWM2,portDig2,PWM2&255,dig2&255]))
 
+def sonar(portTrig,portEcho):
+    ser.write(b'S'+bytes([portTrig,portEcho]))
+    return int.from_bytes(ser.read(4),byteorder='big')
+
 
 class DigitalInput(MDigitalInput):
     """
@@ -223,3 +227,29 @@ class HBridgeOut:
         """
         hbridgeDrive(self.left_pin_PWM, self.left_pin_digital, 0, 1,
             self.right_pin_PWM, self.right_pin_digital, 0, 1)
+
+
+
+class SonarSensor:
+    """
+    Sonar sensor read device
+    """
+    def __init__(self, pinTrig, pinEcho):
+        """
+        Constructor.
+        Args:
+            pinTrig (int): trig pin number.
+            pinEcho (int): echo pin number.
+        """
+        self.pinTrig = pinTrig
+        self.pinEcho = pinEcho
+        input(pinTrig)
+        input(pinEcho)
+
+    def read(self):
+        """
+        Read distance from somar sensor
+        Return:
+            float: distance read by sonar sensor in cm
+        """
+        return sonar(self.pinTrig,self.pinEcho)*0.0343/2 #distance= (round trip duration/2)*speed of sound

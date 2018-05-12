@@ -35,3 +35,7 @@ def motorDrive(portPWM,portDig,pwm,dig):
 
 def hbridgeDrive(portPWM1,portDig1,pwm1,dig1,portPWM2,portDig2,pwm2,dig2):
     ser.write(b'H'+bytes([portPWM1,portDig1,pwm1&255,dig1&255,portPWM2,portDig2,pwm2&255,dig2&255]))
+
+def sonar(portTrig,portEcho):
+    ser.write(b'S'+bytes([portTrig,portEcho]))
+    return int.from_bytes(ser.read(4),byteorder='big')

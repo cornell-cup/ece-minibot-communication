@@ -13,7 +13,7 @@ class AnalogSensor():
         """
         Constructor.
         Args:
-            analoginput (:obj:`AnalogInput`): AnalogInput object for pin of sensor.
+            pin_number (int): pin number on arduino of input pin
         """
         self.name = name
         self.analoginput = AnalogInput(pin_number)

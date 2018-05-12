@@ -1,17 +1,17 @@
 unsigned char vars[10];
-unsigned int x;
+unsigned long x;
 
 void setup() {
   Serial.begin(1000000);
 }
 
 void loop() {
-  
+
 }
 
 void serialEvent() {
   while (Serial.available()) {
-    unsigned char command= Serial.read();
+    unsigned char command = Serial.read();
     switch (command) {
       case 'D' : //digital read
         Serial.readBytes(vars, 1);
@@ -42,6 +42,19 @@ void serialEvent() {
         analogWrite(vars[0], vars[2]);
         digitalWrite(vars[5], vars[7]);
         analogWrite(vars[4], vars[6]);
+        break;
+      case 'S' : //Sonar sensor - return time diff in microseconds
+        Serial.readBytes(vars, 2);
+        digitalWrite(vars[0], LOW);
+        delayMicroseconds(2);
+        digitalWrite(vars[0], HIGH);
+        delayMicroseconds(10);
+        digitalWrite(vars[0], LOW);
+        x = pulseIn(vars[1], HIGH);
+        Serial.write((x >> 24) & 0xFF);
+        Serial.write((x >> 16) & 0xFF);
+        Serial.write((x >> 8) & 0xFF);
+        Serial.write(x & 0xFF);
         break;
       case 'O' : //declare output pin
         Serial.readBytes(vars, 1);
