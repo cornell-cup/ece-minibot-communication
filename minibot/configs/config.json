@@ -21,6 +21,10 @@
     }
   ],
   "colorsensors": [
+    {
+      "name" :"color",
+        "pin": 5
+    }
 
   ],
   "analogsensors": [
