@@ -53,13 +53,13 @@ class Bot():
         for sensor in config["colorsensors"]:
             name = sensor["name"]
             pin = sensor["pin"]
-            self.sensors[name] = ColorSensor(self, name, pin)
+            self.sensors[name] = ColorSensor(name, pin)
 
         #Add analog sensors
         for sensor in config["analogsensors"]:
             name = sensor["name"]
             pin = sensor["pin"]
-            self.sensors[name] = AnalogSensor(self, name, pin)
+            self.sensors[name] = AnalogSensor(name, pin)
 
     def get_state(self):
         """
