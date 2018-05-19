@@ -21,6 +21,11 @@
     }
   ],
   "colorsensors": [
+    {
+      "name" :"rightMotor",
+        "pin": 5,
+
+    }
 
   	
   ],
