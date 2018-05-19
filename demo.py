@@ -13,6 +13,7 @@ if __name__ == "__main__":
     config = json.loads(config_file.read())
     bot = Bot(config)
     color= bot.get_sensor_by_name("color")
+    '''
     while true:
         print("Moving until BLUE")
         bot.move_forward(50)
@@ -28,4 +29,6 @@ if __name__ == "__main__":
            bot.wait(0.001)
         bot.stop()
         bot.wait(1)
+    '''
+    print(color.get_color_name())
 
