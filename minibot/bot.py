@@ -45,10 +45,10 @@ class Bot():
                       self.actuators["right"]["pinHighLow"]))
         self.stop()
 
-        self.actuators["demo"] = HBridge(HBridgeOut(config["actuators"]["demo"]["pinPWM"],
-                      config["actuators"]["demo"]["pinHighLow"],
-                      config["actuators"]["demo"]["pinPWM"],
-                      config["actuators"]["demo"]["pinHighLow"]))
+        self.actuators["demo"] = HBridge(HBridgeOut(config["actuators"][2]["pinPWM"],
+                      config["actuators"][2]["pinHighLow"],
+                      config["actuators"][2]["pinPWM"],
+                      config["actuators"][2]["pinHighLow"]))
 
         #Starts wheels
         wheelEnabler = DigitalOutput(config["wheelEnablerPin"])
