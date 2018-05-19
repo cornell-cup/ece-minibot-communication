@@ -15,7 +15,7 @@ ser = serial.Serial(
     parity = serial.PARITY_NONE,
     stopbits = serial.STOPBITS_ONE,
     bytesize=serial.EIGHTBITS,
-    timeout=2
+    timeout=5
 )
 
 def input(port):
@@ -50,9 +50,10 @@ def sonar(portTrig,portEcho):
 
 def color():
     ser.write(b'C')
-    return [int.from_bytes(ser.read(2),byteorder='big'), #R
-            int.from_bytes(ser.read(2),byteorder='big'), #G
-            int.from_bytes(ser.read(2),byteorder='big')] #B
+    x= ser.read(6)
+    return [int.from_bytes(x[0:2],byteorder='big'), #R
+            int.from_bytes(x[2:4],byteorder='big'), #G
+            int.from_bytes(x[4:6],byteorder='big')] #B
 
 
 class DigitalInput(MDigitalInput):
