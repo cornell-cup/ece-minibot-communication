@@ -29,7 +29,7 @@
   "colorsensors": [
     {
       "name" :"color",
-        "pin": 5,
+        "pin": 5
 
     }
 
