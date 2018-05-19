@@ -19,10 +19,16 @@
         "pinHighLow": 4
 
     }
+    {
+      "name" :"demomotor",
+        "pinPWM": 6,
+        "pinHighLow": 7
+
+    }
   ],
   "colorsensors": [
     {
-      "name" :"rightMotor",
+      "name" :"color",
         "pin": 5,
 
     }
