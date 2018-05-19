@@ -2,7 +2,7 @@
 Color Sensor for the MiniBot.
 """
 
-from minibot.peripherals.TCS34725 import TCS34725 as CSensor
+from minibot.hardware.arduino.gpio import ColorSensor as CSensor
 import logging
 import math
 

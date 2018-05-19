@@ -48,6 +48,12 @@ def sonar(portTrig,portEcho):
     ser.write(b'S'+bytes([portTrig,portEcho]))
     return int.from_bytes(ser.read(4),byteorder='big')
 
+def color():
+    ser.write(b'C')
+    return [int.from_bytes(ser.read(2),byteorder='big'), #R
+            int.from_bytes(ser.read(2),byteorder='big'), #G
+            int.from_bytes(ser.read(2),byteorder='big')] #B
+
 
 class DigitalInput(MDigitalInput):
     """
@@ -253,3 +259,23 @@ class SonarSensor:
             float: distance read by sonar sensor in cm
         """
         return sonar(self.pinTrig,self.pinEcho)*0.0343/2 #distance= (round trip duration/2)*speed of sound
+
+class ColorSensor:
+    """
+    Color sensor read device
+    """
+    def __init__(self):
+        """
+        Constructor.
+        Args:
+
+        """
+
+    def get_raw_data(self):
+        """
+        Read distance from somar sensor
+        Return:
+            [R,G,B]: red green and blue values from color sensor
+        """
+        return color()
+
