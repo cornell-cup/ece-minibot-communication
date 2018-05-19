@@ -34,17 +34,17 @@ class HBridge():
         self.right_speed = max(min(right, 100.0), -100.0)
         # divide by hundred because PWMs have values between 1 and -1
         # values are negated because of the wiring setup
-        left = -self.left_speed/100.0
-        right = -self.right_speed/100.0
+        left = self.left_speed/100.0
+        right = self.right_speed/100.0
 
-        if left <= 0:
+        if left < 0:
             left_dig = 1
             left_pwm = 1 - abs(left)
         else:
             left_dig = 0
             left_pwm = abs(left)
 
-        if right <= 0:
+        if right < 0:
             right_dig = 1
             right_pwm = 1 - abs(right)
         else:
