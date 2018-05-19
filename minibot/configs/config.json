@@ -18,7 +18,7 @@
         "pinPWM": 5,
         "pinHighLow": 4
 
-    }
+    },
     {
       "name" :"demomotor",
         "pinPWM": 6,
