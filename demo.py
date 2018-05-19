@@ -12,6 +12,8 @@ if __name__ == "__main__":
     config_file = open(CONFIG_LOCATION)
     config = json.loads(config_file.read())
     bot = Bot(config)
+    motor= bot.get_actuator_by_name("demo")
+    motor.set_speed(50,50)
     color= bot.get_sensor_by_name("color")
     '''
     while true:

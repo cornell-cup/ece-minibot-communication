@@ -45,6 +45,11 @@ class Bot():
                       self.actuators["right"]["pinHighLow"]))
         self.stop()
 
+        self.actuators["demo"] = HBridge(HBridgeOut(config["demo"]["pinPWM"],
+                      config["demo"]["pinHighLow"],
+                      config["demo"]["pinPWM"],
+                      config["demo"]["pinHighLow"]))
+
         #Starts wheels
         wheelEnabler = DigitalOutput(config["wheelEnablerPin"])
         wheelEnabler.set_high()
