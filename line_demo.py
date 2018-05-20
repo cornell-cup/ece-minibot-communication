@@ -16,24 +16,17 @@ if __name__ == "__main__":
     bot = Bot(config)
     print("Following line until intersection.")
     drive= 1
-    spd = 225
-    a = 80
-    b = 160
-    c = 225
+    spd = 70
+    a = 35
+    b = 47
+    c = 70
     while drive:
-        time.sleep(1)
         r3 = not digitalRead(11)
         r2 = not digitalRead(13)
         r1 = not digitalRead(14)
         l1 = not digitalRead(15)
         l2 = not digitalRead(16)
         l3 = not digitalRead(17)
-        print(r3)
-        print(r2)
-        print(r1)
-        print(l1)
-        print(l2)
-        print(l3)
         if l1+l2+l3+r1+r2+r3 >= 5:
             drive = 0
             bot.stop()
