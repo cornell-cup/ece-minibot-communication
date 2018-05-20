@@ -18,15 +18,14 @@
         "pinPWM": 5,
         "pinHighLow": 4
 
-    },
-    {
-      "name" :"demomotor",
-        "pinPWM": 6,
-        "pinHighLow": 7
-
     }
   ],
   "colorsensors": [
+
+    {
+      "name" :"color",
+        "pinPWM": 5
+    }
   	
   ],
   "analogsensors": [
