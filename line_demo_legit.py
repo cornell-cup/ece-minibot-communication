@@ -23,8 +23,8 @@ if __name__ == "__main__":
     b = 160
     c = 225
     while drive:
-    	time.sleep(1)
-    	r3 = not digitalRead(11)
+        time.sleep(1)
+        r3 = not digitalRead(11)
         r2 = not digitalRead(13)
         r1 = not digitalRead(14)
         l1 = not digitalRead(15)
