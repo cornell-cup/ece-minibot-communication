@@ -1,12 +1,58 @@
 unsigned char vars[10];
 unsigned int x;
 
+
+unsigned char drive;
+unsigned char lm= 3;
+unsigned char rm= 5;
+unsigned char spd= 150;
+unsigned char a= 5;
+unsigned char b= 15;
+unsigned char c= 30;
+
 void setup() {
   Serial.begin(1000000);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
 }
 
 void loop() {
 
+  if (drive) {
+    char r3= digitalRead(11);
+    char r2= digitalRead(13);
+    char r1= digitalRead(A0);
+    char l1= digitalRead(A1);
+    char l2= digitalRead(A2);
+    char l3= digitalRead(A3);
+    if (l1 && l2 && l3 && r1 && r1 && r3) {
+      drive= 0;
+    } else if (l1 && r1) {
+      analogWrite(rm,spd);
+      analogWrite(lm,spd);
+    } else if (l1) {
+      analogWrite(rm,spd-a);
+      analogWrite(lm,spd+a);
+    } else if (r1) {
+      analogWrite(rm,spd+a);
+      analogWrite(lm,spd-a);
+    } else if (l2) {
+      analogWrite(rm,spd-b);
+      analogWrite(lm,spd+b);
+    } else if (r2) {
+      analogWrite(rm,spd+b);
+      analogWrite(lm,spd-b);
+    } else if (l3) {
+      analogWrite(rm,spd-c);
+      analogWrite(lm,spd+c);
+    } else if (r3) {
+      analogWrite(rm,spd+c);
+      analogWrite(lm,spd-c);
+    }
+  }
+  
 }
 
 void serialEvent() {
@@ -50,6 +96,16 @@ void serialEvent() {
       case 'I' : //declare input pin
         Serial.readBytes(vars, 1);
         pinMode(vars[0], INPUT);
+        break;
+      case 'Z' : //turn drive on
+        Serial.readBytes(vars, 1);
+        spd= vars[0];
+        if (spd > 225) spd = 225;
+        else if (spd < 30) spd = 30;
+        drive= 1;
+        break;
+      case 'X' : //turn drive off
+        drive= 0;
         break;
     }
   }
