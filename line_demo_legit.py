@@ -34,7 +34,7 @@ if __name__ == "__main__":
         if l1+l2+l3+r1+r2+r3 >= 5:
             drive = 0
             bot.stop()
-        elif (l1 && r1):
+        elif (l1 and r1):
             bot.set_wheel_power(spd,spd)
         elif (l1):
             bot.set_wheel_power(spd-a,spd)
