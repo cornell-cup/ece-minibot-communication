@@ -15,6 +15,8 @@ if __name__ == "__main__":
     motor= bot.get_actuator_by_name("demo")
     motor.set_speed(50,50)
     color= bot.get_sensor_by_name("color")
+    while 1:
+        print(color.read())
     '''
     while true:
         print("Moving until BLUE")
@@ -32,5 +34,3 @@ if __name__ == "__main__":
         bot.stop()
         bot.wait(1)
     '''
-    print(color.get_color_name())
-

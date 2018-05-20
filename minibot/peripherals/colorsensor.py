@@ -63,6 +63,7 @@ class ColorSensor():
         Reads and returns normalized RGB data from color sensor.
         """
         rd = self.color_sensor.get_raw_data()
+        print(rd)
         return normalize((rd[0], rd[1], rd[2]))
 
     def get_color_name(self):
