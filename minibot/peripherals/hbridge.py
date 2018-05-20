@@ -31,7 +31,7 @@ class HBridge():
             right (float): The speed of the right motor (-100 to 100).
         """
         self.left_speed = max(min(left, 100.0), -100.0)
-        self.right_speed = max(min(right, 100.0), -100.0)
+        self.right_speed = -max(min(right, 100.0), -100.0)
         # divide by hundred because PWMs have values between 1 and -1
         # values are negated because of the wiring setup
         left = self.left_speed/100.0
