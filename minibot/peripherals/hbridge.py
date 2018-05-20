@@ -37,19 +37,18 @@ class HBridge():
         left = self.left_speed/100.0
         right = self.right_speed/100.0
 
+        right_pwm = abs(right)
+        left_pwm = abs(left)
+
         if left < 0:
             left_dig = 1
-            left_pwm = 1 - abs(left)
         else:
             left_dig = 0
-            left_pwm = abs(left)
 
         if right < 0:
             right_dig = 1
-            right_pwm = 1 - abs(right)
         else:
             right_dig = 0
-            right_pwm = abs(right)
 
         self.hbridge.drive(left_pwm,left_dig,right_pwm,right_dig)
 
