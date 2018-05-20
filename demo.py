@@ -15,9 +15,6 @@ if __name__ == "__main__":
     motor= bot.get_actuator_by_name("demo")
     motor.set_speed(50,50)
     color= bot.get_sensor_by_name("color")
-    print(color.read())
-    bot.wait(1)
-    print(color.read())
     while 1:
         print(color.read())
     '''

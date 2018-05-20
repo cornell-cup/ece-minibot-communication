@@ -90,5 +90,5 @@ def normalize(vector):
     """
     magnitude = vector[0] + vector[1] + vector[2] + 0.0
     if magnitude == 0:
-        return 0
+        return vector
     return vector[0] / magnitude, vector[1] / magnitude, vector[2] / magnitude

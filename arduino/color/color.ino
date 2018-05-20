@@ -1,18 +1,18 @@
-#include <Wire.h>
-#include "Adafruit_TCS34725.h"
+//#include <Wire.h>
+//#include "Adafruit_TCS34725.h"
 
 ///VARIABLES FOR COMMUNICATION PROTOCOL
 unsigned char vars[10];
 unsigned long x;
 
 ///VARIABLES FOR RGB
-Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_2_4MS, TCS34725_GAIN_4X);
+//Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_2_4MS, TCS34725_GAIN_4X);
 uint16_t r, g, b, c;
 
 
 void setup() {
   Serial.begin(1000000);
-  tcs.begin();
+  //tcs.begin();
 }
 
 void loop() {
@@ -67,7 +67,8 @@ void serialEvent() {
         Serial.write(x & 0xFF);
         break;
       case 'C' : //Color sensor - return R,G,B
-        tcs.getRawData(&r, &g, &b, &c);
+        //tcs.getRawData(&r, &g, &b, &c);
+        r=g=b=65000;
         Serial.write((r >> 8) & 0xFF);
         Serial.write(r & 0xFF);
         Serial.write((g >> 8) & 0xFF);

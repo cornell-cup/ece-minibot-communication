@@ -49,7 +49,7 @@ def sonar(portTrig,portEcho):
     return int.from_bytes(ser.read(4),byteorder='big')
 
 def color():
-    ser.write(b'C')
+    ser.write(b'C'+bytes([10]))
     x= ser.read(6)
     return (int.from_bytes(x[0:2],byteorder='big'),
             int.from_bytes(x[2:4],byteorder='big'),
