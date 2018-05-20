@@ -17,4 +17,7 @@ if __name__ == "__main__":
     color = bot.get_sensor_by_name("color")
     print("Staying off the blue")
     while 1:
-        print(color.read())
+        if (color.get_color_name() == "BLUE"):
+            bot.turn_clockwise(50)
+        else:
+            bot.move_forward(50)
