@@ -34,18 +34,18 @@ if __name__ == "__main__":
         if l1+l2+l3+r1+r2+r3 >= 5:
             drive = 0
             bot.stop()
-        else if (l1 && r1):
+        elif (l1 && r1):
             bot.set_wheel_power(spd,spd)
-        else if (l1):
+        elif (l1):
             bot.set_wheel_power(spd-a,spd)
-        else if (r1):
+        elif (r1):
             bot.set_wheel_power(spd,spd-a)
-        else if (l2):
+        elif (l2):
             bot.set_wheel_power(spd-b,spd)
-        else if (r2):
+        elif (r2):
             bot.set_wheel_power(spd,spd-b)
-        else if (l3):
+        elif (l3):
             bot.set_wheel_power(spd-c,spd)
-        else if (r3):
+        elif (r3):
             bot.set_wheel_power(spd,spd-c)
         
