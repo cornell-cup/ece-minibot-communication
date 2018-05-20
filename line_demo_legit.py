@@ -25,12 +25,12 @@ if __name__ == "__main__":
     b = 160
     c = 225
     while drive:
-        r3 = !digitalRead(11)
-        r2 = !digitalRead(13)
-        r1 = !digitalRead(14)
-        l1 = !digitalRead(15)
-        l2 = !digitalRead(16)
-        l3 = !digitalRead(17)
+        r3 = not digitalRead(11)
+        r2 = not digitalRead(13)
+        r1 = not digitalRead(14)
+        l1 = not digitalRead(15)
+        l2 = not digitalRead(16)
+        l3 = not digitalRead(17)
         if l1+l2+l3+r1+r2+r3 >= 5:
             drive = 0
             bot.stop()
