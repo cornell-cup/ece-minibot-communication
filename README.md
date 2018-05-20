@@ -2,6 +2,16 @@
 
 Code for UART communication between the Pi and Arduino
 
+## Use
+
+A few things must first be configured on the Pi.
+1. Clone this repository
+2. Link this repository to directory cs-minibot using command "ln -s ~/ece-minibot-communication ~/cs-minibot"
+3. Enable UART in system options
+4. Removing line "console=serial0,115200" from /boot/cmdline.txt
+
+The Arduino does not require special configuration, simply program it with arduino/main/main.ino
+
 ## Performance
 
 Performance had been characterized using a [Python script](https://github.com/cornell-cup/ece-minibot-communication/blob/master/pi/SpeedTest.py) which times 10,000 performances of each GPIO command. The results using a baud rate of 1MHz are as follows:
