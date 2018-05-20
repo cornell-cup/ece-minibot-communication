@@ -51,9 +51,9 @@ def sonar(portTrig,portEcho):
 def color():
     ser.write(b'C')
     x= ser.read(6)
-    return [int.from_bytes(x[0:2],byteorder='big'),
+    return int.from_bytes(x[0:2],byteorder='big'),
             int.from_bytes(x[2:4],byteorder='big'),
-            int.from_bytes(x[4:6],byteorder='big')]
+            int.from_bytes(x[4:6],byteorder='big')
 
 
 class DigitalInput(MDigitalInput):
