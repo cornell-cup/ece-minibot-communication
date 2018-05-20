@@ -18,8 +18,6 @@ if __name__ == "__main__":
     motor.set_speed(50,50)
     print("Following line until intersection.")
     drive= 1
-    lm = 3
-    rm = 5
     spd = 225
     a = 80
     b = 160
@@ -31,6 +29,12 @@ if __name__ == "__main__":
         l1 = not digitalRead(15)
         l2 = not digitalRead(16)
         l3 = not digitalRead(17)
+        print(r3)
+        print(r2)
+        print(r1)
+        print(l1)
+        print(l2)
+        print(l3)
         if l1+l2+l3+r1+r2+r3 >= 5:
             drive = 0
             bot.stop()
