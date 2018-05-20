@@ -3,6 +3,7 @@ Tests for minibot movement.
 """
 from minibot.bot import Bot
 from minibot.hardware.arduino.gpio import start, stop
+import time
 
 import json
 
@@ -17,3 +18,5 @@ if __name__ == "__main__":
     motor.set_speed(50,50)
 
     start(150)
+    time.sleep(3)
+    stop()
