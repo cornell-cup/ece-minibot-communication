@@ -16,4 +16,4 @@ if __name__ == "__main__":
     motor= bot.get_actuator_by_name("demo")
     motor.set_speed(50,50)
 
-    start(.75)
+    start(150)
