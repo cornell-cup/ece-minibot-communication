@@ -8,7 +8,7 @@ A few things must first be configured on the Pi.
 1. Clone this repository
 2. Link this repository to directory cs-minibot using command "ln -s ~/ece-minibot-communication ~/cs-minibot"
 3. Enable UART in system options
-4. Removing line "console=serial0,115200" from /boot/cmdline.txt
+4. Remove line "console=serial0,115200" from /boot/cmdline.txt
 
 The Arduino does not require special configuration, simply program it with arduino/main/main.ino
 
