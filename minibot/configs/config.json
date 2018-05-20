@@ -24,7 +24,7 @@
 
     {
       "name" :"color",
-        "pinPWM": 5
+        "pin": 5
     }
   	
   ],
