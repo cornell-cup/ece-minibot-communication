@@ -17,19 +17,19 @@ flap.start(6)
 #start down
 try:
 	while True:
-		flap.ChangeDutyCycle(6) 
+		flap.ChangeDutyCycle(4) 
 		print 'flap up'		
 		time.sleep(1)
 		
-		extend.ChangeDutyCycle(3.5) 
+		extend.ChangeDutyCycle(5.5) 
 		print 'extend'		
 		time.sleep(1)
 
-		extend.ChangeDutyCycle(6.5)
+		extend.ChangeDutyCycle(3.5)
 		print 'collapse'
 		time.sleep(1)
 
-		flap.ChangeDutyCycle(4.0) 
+		flap.ChangeDutyCycle(6.0) 
 		print 'flap down'
 		time.sleep(1)
 

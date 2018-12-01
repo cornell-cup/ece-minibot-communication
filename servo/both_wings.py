@@ -28,22 +28,22 @@ rFlap.start(6)
 try:
 	while True:
 		lFlap.ChangeDutyCycle(6) 
-		rFlap.ChangeDutyCycle(5.5) 
+		rFlap.ChangeDutyCycle(4) 
 		print 'flap up'		
 		time.sleep(1)
 		
 		lExtend.ChangeDutyCycle(3.5) 
-		rExtend.ChangeDutyCycle(2.5) 
+		rExtend.ChangeDutyCycle(5.5) 
 		print 'extend'		
 		time.sleep(1)
 
 		lExtend.ChangeDutyCycle(6.5)
-		rExtend.ChangeDutyCycle(5.5) 	
+		rExtend.ChangeDutyCycle(3.5) 	
 		print 'collapse'
 		time.sleep(1)
 
 		lFlap.ChangeDutyCycle(4.0) 
-		rFlap.ChangeDutyCycle(3.5) 
+		rFlap.ChangeDutyCycle(6.0) 
 		print 'flap down'
 		time.sleep(1)
 
