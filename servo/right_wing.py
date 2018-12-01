@@ -3,16 +3,16 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
 
-GPIO.setup(36, GPIO.OUT)
-extend= GPIO.PWM(36,50)
+GPIO.setup(16, GPIO.OUT)
+extend= GPIO.PWM(16,50)
 extend.start(3.5)
 #start with collapsed
 
-GPIO.setup(32, GPIO.OUT)
-flap= GPIO.PWM(32,50)
+GPIO.setup(12, GPIO.OUT)
+flap= GPIO.PWM(12,50)
 flap.start(6)
 #start down
 try:

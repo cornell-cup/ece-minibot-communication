@@ -3,24 +3,26 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(40, GPIO.OUT)
-lExtend= GPIO.PWM(40,50)
+
+
+GPIO.setup(21, GPIO.OUT)
+lExtend= GPIO.PWM(21,50)
 lExtend.start(5.5)
 # left wing start with collapsed
-GPIO.setup(38, GPIO.OUT)
-lFlap= GPIO.PWM(38,50)
+GPIO.setup(20, GPIO.OUT)
+lFlap= GPIO.PWM(20,50)
 lFlap.start(3.5)
 #left starts down
 
-GPIO.setup(36, GPIO.OUT)
-rExtend= GPIO.PWM(36,50)
+GPIO.setup(16, GPIO.OUT)
+rExtend= GPIO.PWM(16,50)
 rExtend.start(3.5)
 #start with collapsed (right wing)
 
-GPIO.setup(32, GPIO.OUT)
-rFlap= GPIO.PWM(32,50)
+GPIO.setup(12, GPIO.OUT)
+rFlap= GPIO.PWM(12,50)
 rFlap.start(6)
 #start down (right)
 try:
@@ -56,6 +58,9 @@ try:
 #		time.sleep(1)
 				
 except KeyboardInterrupt:
-	p.stop()
+	rFlap.stop()
+	rExtend.stop()
+	lFlap.stop()
+	lExtend.stop()
 	GPIO.cleanup()
 
