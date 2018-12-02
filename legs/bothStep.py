@@ -17,7 +17,7 @@ GPIO.setmode(GPIO.BCM)
 
 #StepPins = [17,18,27,22]
 
-StepPins = [26,19,13,6,17,18,27,22]
+StepPins = [8,11,9,10,17,18,27,22]
 
 
 
