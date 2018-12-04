@@ -17,7 +17,7 @@ try:
 		flap.ChangeDutyCycle(5.5) 
 		print 'flap up'		
 		time.sleep(1)
-		extend.ChangeDutyCycle(2.5) 
+		extend.ChangeDutyCycle(3.5) 
 		print 'extend'		
 		time.sleep(1)	
 		extend.ChangeDutyCycle(5.5) 	

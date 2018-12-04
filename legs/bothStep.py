@@ -37,7 +37,7 @@ Seq = [
 	[0,0,0,1,1,1,0,0],
 	[1,0,0,1,1,0,0,0]]
 #for i in range(512):
-for i in range(512):
+for i in range(612):
   for step in reversed(range(8)):
     for pin in range(8):
 	GPIO.output(StepPins[pin],Seq[step][pin])
@@ -48,7 +48,7 @@ time.sleep(2)
 #for i in range(50):
  
     
-for i in range(120): 
+for i in range(80): 
  for step in range(8):
     for pin in range(8):
 	GPIO.output(StepPins[pin],Seq[step][pin])  
