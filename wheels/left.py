@@ -1,4 +1,5 @@
 
+
 import RPi.GPIO as GPIO
 import time
 import sys
@@ -11,13 +12,13 @@ GPIO.setup(13, GPIO.OUT)
 
 try:
   while True:
-    GPIO.output(19,GPIO.LOW)
-    GPIO.output(26,GPIO.HIGH)
+    GPIO.output(19,GPIO.HIGH)
+    GPIO.output(26,GPIO.LOW)
     GPIO.setup(6, GPIO.LOW)
     GPIO.setup(13, GPIO.HIGH)
 	
 except KeyboardInterrupt:
-  GPIO.output(26,GPIO.LOW)
+  GPIO.output(19,GPIO.LOW)
   GPIO.output(13,GPIO.LOW)
   print ('interrupt')
   GPIO.cleanup()
